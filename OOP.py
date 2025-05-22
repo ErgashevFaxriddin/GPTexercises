@@ -98,84 +98,84 @@
 # matem = Fan("Mathematics")
 # english.add_student(talaba1)
 
-# Talaba klassi
-class Talaba:
-    def __init__(self, ism, yosh, guruh, fakultet, yonalish):
-        self.name = ism
-        self.age = yosh
-        self.group = guruh
-        self.faculty = fakultet  
-        self.major = yonalish
+# # Talaba klassi
+# class Talaba:
+#     def __init__(self, ism, yosh, guruh, fakultet, yonalish):
+#         self.name = ism
+#         self.age = yosh
+#         self.group = guruh
+#         self.faculty = fakultet  
+#         self.major = yonalish
         
-    def get_name(self):
-        return self.name
+#     def get_name(self):
+#         return self.name
     
-    def get_age(self, yil):
-        """Berilgan yil orqali yosh hisoblash"""
-        return self.age - yil
+#     def get_age(self, yil):
+#         """Berilgan yil orqali yosh hisoblash"""
+#         return self.age - yil
 
-    def get_group(self):
-        return self.group
+#     def get_group(self):
+#         return self.group
 
-    def get_faculty(self):
-        return self.faculty
+#     def get_faculty(self):
+#         return self.faculty
 
-    def get_major(self):
-        return self.major
+#     def get_major(self):
+#         return self.major
 
-    def get_info(self):
-        return f"Ism: {self.name} Yosh: {self.age} Yo'nalish: {self.major}"
+#     def get_info(self):
+#         return f"Ism: {self.name} Yosh: {self.age} Yo'nalish: {self.major}"
 
-    def set_yosh(self, yangi_yosh):
-        self.age = yangi_yosh
-        return f"Yosh {yangi_yosh} ga o'zgartirildi"
+#     def set_yosh(self, yangi_yosh):
+#         self.age = yangi_yosh
+#         return f"Yosh {yangi_yosh} ga o'zgartirildi"
     
-    def update_yosh(self):
-        self.age += 1
+#     def update_yosh(self):
+#         self.age += 1
 
-# Obyektlar
-talaba1 = Talaba('Faxriddin', 21, '660-23', 'Biznes', 'Digital Economy')
-talaba2 = Talaba('Muslima', 21, '990-22', 'Matematika', 'Oliy Matematika')
+# # Obyektlar
+# talaba1 = Talaba('Faxriddin', 21, '660-23', 'Biznes', 'Digital Economy')
+# talaba2 = Talaba('Muslima', 21, '990-22', 'Matematika', 'Oliy Matematika')
 
-# Obyekt yaratish
-# foydalanuvchi1 = User("Alijon", "Valiyev", "alijon1994@gmail.com")
-# print(foydalanuvchi1.get_info())
+# # Obyekt yaratish
+# # foydalanuvchi1 = User("Alijon", "Valiyev", "alijon1994@gmail.com")
+# # print(foydalanuvchi1.get_info())
 
 
-# Fan klassi (fanga talabalar qo‘shish)
-class Fan:
-    """Fanga talabalarni qo‘shish uchun klass"""
-    def __init__(self, nomi):
-        self.name = nomi
-        self.talabalar_royxati = []
-        self.talabalar_soni = 0
+# # Fan klassi (fanga talabalar qo‘shish)
+# class Fan:
+#     """Fanga talabalarni qo‘shish uchun klass"""
+#     def __init__(self, nomi):
+#         self.name = nomi
+#         self.talabalar_royxati = []
+#         self.talabalar_soni = 0
 
-    def add_student(self, talaba):
-        """Talabani fan ro'yxatiga qo‘shish"""
-        self.talabalar_royxati.append(talaba)
+#     def add_student(self, talaba):
+#         """Talabani fan ro'yxatiga qo‘shish"""
+#         self.talabalar_royxati.append(talaba)
 
-    def get_students(self):
-        """Talabalar ro'yxatini chiqarish"""
-        # return [str(talaba) for talaba in self.talabalar_royxati]
-        return [talaba.get_info() for talaba in self.talabalar_royxati]
+#     def get_students(self):
+#         """Talabalar ro'yxatini chiqarish"""
+#         # return [str(talaba) for talaba in self.talabalar_royxati]
+#         return [talaba.get_info() for talaba in self.talabalar_royxati]
 
-# Fan obyektlari
-english = Fan("English")
-matem = Fan("Matematika")
-matem.add_student(talaba1)
-# print(matem.talabalar_royxati) #talabalar royxatini korish
-# print(matem.talabalar_soni()) #talalabalar sonini korish
-# print(matem.talabalar_royxati[0].age) #royxatdagi talabaning ismini korish
-# print(matem.talabalar_royxati[0].get_info())
-print(matem.get_students()) 
-def see_methods(klass):
-    return [method for method in dir(klass) if method.startswith('__') is False]
-print(see_methods(Talaba))
-# Talaba qo‘shish
-english.add_student(talaba1)
-english.add_student(talaba2)
+# # Fan obyektlari
+# english = Fan("English")
+# matem = Fan("Matematika")
+# matem.add_student(talaba1)
+# # print(matem.talabalar_royxati) #talabalar royxatini korish
+# # print(matem.talabalar_soni()) #talalabalar sonini korish
+# # print(matem.talabalar_royxati[0].age) #royxatdagi talabaning ismini korish
+# # print(matem.talabalar_royxati[0].get_info())
+# # print(matem.get_students()) 
+# def see_methods(klass):
+#     return [method for method in dir(klass) if method.startswith('__') is False]
+# # print(see_methods(Talaba))
+# # Talaba qo‘shish
+# english.add_student(talaba1)
+# english.add_student(talaba2)
 
-# Chiqarish
+# # Chiqarish
 # print("English fanidagi talabalar:")
 # for info in english.get_students():
 #     print(info)
@@ -214,3 +214,81 @@ english.add_student(talaba2)
 
 #     def get_info(self):
 #         return f"Foydalanuvchi: {self.name} {self.surname}, email: {self.e_mail}, bosqich: {self.bosqich}"
+
+# Avto degan yangi klass yarating. 
+# Unga avtomobillarga doir bo'lgan bir nechta xususiyatlar 
+# (model, rang, korobka, narh va hokazo) qo'shing. 
+# Ayrim xususiyatlarga standart qiymat bering (masalan, kilometer=0)
+
+class Avto:
+    """Avtomobil klassi: brend, model, rang, km, tezlik"""
+    def __init__(self, brend, rusum, rang):
+        self.brand = brend
+        self.model = rusum
+        self.color = rang
+        self.km = 0
+        self.speed = 0
+
+    def get_info(self):
+        return f"Brend: {self.brand}, Model: {self.model}, Rang: {self.color}, KM: {self.km}, Tezlik: {self.speed} km/soat"
+
+    def get_model(self):
+        return self.model
+    
+    def get_brand(self):
+        return self.brand
+    
+    def get_color(self):
+        return self.color
+    
+    def get_km(self):
+        return self.km  # sizda `sel.km` deb xatolik bor edi
+    
+    def get_speed(self):
+        return self.speed
+
+    def update_km(self, yangi_km):
+        if yangi_km >= self.km:
+            self.km = yangi_km
+        else:
+            print("Xatolik: Yangi kilometr avvalgisidan kam bo'lmasligi kerak.")
+
+    def update_speed(self, new_speed):
+        self.speed = new_speed
+
+
+class Avtosalon:
+    """Avtosalon klassi"""
+    def __init__(self, nom, manzil, telegram, instagram, websayt):
+        self.name = nom
+        self.location = manzil
+        self.telegram = telegram
+        self.instagram = instagram
+        self.website = websayt
+        self.avtolar = []
+        
+    def add_car(self, new_car):
+        """Yangi avtomobil qo‘shish"""
+        self.avtolar.append(new_car)
+        
+    def avtos_info(self):
+        """Avtosalondagi barcha avtomobillar haqida ma'lumot"""
+        return [avto.get_info() for avto in self.avtolar]
+
+
+# Avto obyektlari
+avto1 = Avto('Chevrolet', 'Gentra', 'qora')
+avto2 = Avto('Hyundai', 'Sonata', 'oq')
+avto1.update_km(15000)
+avto2.update_speed(120)
+
+# Avtosalon obyektini yaratamiz
+salon = Avtosalon("AvtoSalon1", "Toshkent", "@avtosalon1", "avtosalon1", "www.avtosalon1.com")
+
+# Avtomobillarni qo‘shamiz
+salon.add_car(avto1)
+salon.add_car(avto2)
+
+# Ma'lumotlarni chiqaramiz
+for info in salon.avtos_info():
+    print(info)
