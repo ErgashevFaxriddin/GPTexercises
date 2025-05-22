@@ -20,32 +20,38 @@ def barcha_harflar(soz):
     harflar = len(soz)
     return harflar
 
-def birinchi_unikal_harf(soz):
-    soz = soz.lower()  
+def unikal_harf(soz):
     harf_sana = {}
-
+    # Harflarni kichik holatda hisoblash uchun (A va a ni bitta deb olish uchun)
     for harf in soz:
-        if harf.isalpha():  
+        if harf.isalpha():
+            harf = harf.lower()
             harf_sana[harf] = harf_sana.get(harf, 0) + 1
 
+    # Endi asl harfni chiqarish uchun yana asl so‘z bo‘yicha yuramiz
     for harf in soz:
-        if harf.isalpha() and harf_sana[harf] == 1:
+        if harf.isalpha() and harf_sana[harf.lower()] == 1:
             return harf
 
     return "Unikal harf yo'q"
 
 def most_letter(soz):
+    soz = soz.lower()
     harflar = {}
-
-    for harf in soz.lower():
+    
+    for harf in soz:
         if harf.isalpha():
             if harf in harflar:
                 harflar[harf] += 1
             else:
                 harflar[harf] = 1
-        eng_kop = max(harflar, key=harflar.get)
-    return eng_kop, harflar[eng_kop]
-    
+        
+    natija = []
+    for harf, miqdor in harflar.items():
+        if miqdor >= 2:
+            natija.append(harf)        
+    return natija
+
 def count_letter(soz, harf):
     return soz.count(harf)
         
@@ -56,29 +62,23 @@ def main():
         print("0 - stop")
         print("1 - unli harflar")
         print("2 - undosh harflar")
-        print("3 - unli harflar soni")
-        print("4 - undosh harflar soni")
-        print('5 - barcha harflar soni')
-        print('6 - eng ko\'p foydalanilgan harf')
-        print('7 - unikal harf')
-        print('8 - harf takrorlanishi')
+        print('3 - barcha harflar soni')
+        print('4 - eng ko\'p foydalanilgan harf')
+        print('5 - unikal harf')
+        print('6 - harf takrorlanishi')
         
         tanlov = input('\n>>> ')
         if tanlov == '1':
-            print(f"UNLI HARFLAR\n>>> {unli_harflar(soz)}\n")
+            print(f"UNLI HARFLAR\n>>> {unli_harflar(soz)}\n>>> UNLI HARFLAR SONI\n>>> {unlilar_len(soz)}")
         elif tanlov == '2':
-            print(f"UNDOSH HARFLAR\n>>> {undosh_harflar(soz)}")
+            print(f"UNDOSH HARFLAR\n>>> {undosh_harflar(soz)}\n>>> UNDOSH HARFLAR SONI\n>>> {undoshlar_len(soz)}")
         elif tanlov == '3':
-            print(f"UNLI HARFLAR SONI\n>>> {unlilar_len(soz)}")
-        elif tanlov == '4':
-            print(f"UNDOSH HARFLAR SONI\n>>> {undoshlar_len(soz)}")
-        elif tanlov == '5':
             print(f"BARCHA HARFLAR SONI\n>>> {barcha_harflar(soz)}")
-        elif tanlov == '6':
+        elif tanlov == '4':
             print(f"ENG KOP FOYDALANILGAN HARF\n>>> {most_letter(soz)}")
-        elif tanlov == '7':
-            print(f"UNIKAL HARF\n>>> {birinchi_unikal_harf(soz)}")
-        elif tanlov == '8':
+        elif tanlov == '5':
+            print(f"UNIKAL HARF\n>>> {unikal_harf(soz)}")
+        elif tanlov == '6':
             harf = input('HARF KIRITING\n>>> ')
             print(f"{harf} HARFI {count_letter(soz, harf)} MARTA ISHLATILGAN")
         elif tanlov == '0':
